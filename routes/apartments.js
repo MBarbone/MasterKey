@@ -60,7 +60,7 @@ router.get("/:id", (req, res) => {
 router.put("/:id", (req, res) => {
   db.Apartment.update(req.body, {
     where: {
-      id: req.body.id
+      id: req.params.id
     }
   }).then(function(dbApartment) {
     res.json(dbApartment);
@@ -70,7 +70,7 @@ router.put("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
   db.Apartment.destroy({
     where: {
-      id: req.body.id
+      id: req.params.id
     }
   }).then(function(dbApartment) {
     res.json(dbApartment);

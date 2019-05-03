@@ -1,49 +1,50 @@
-// const express = require("express");
-// const Payment = require("../models/paymentModel");
-// const auth = require("../middleware/auth");
-// const { check } = require("express-validator/check");
+var db = require("../models");
+const express = require("express");
+const router = express.Router();
+// const bcrypt = require("bcryptjs");
 
-// const router = express.Router();
+router.post("/", (req, res) => {
+  db.Payment.create(req.body).then(function(dbPayment) {
+    res.json(dbPayment);
+  });
+});
 
-// router.post("/", async (req, res) => {
-//   // remember to add input verification here
-//   const payment = new Payment(
-//     { amount: req.body.amount },
-//     { _apartment: req.body._apartment }
-//   );
+// get all Payments
+router.get("/", (req, res) => {
+  db.Payment.findAll({}).then(function(dbPayment) {
+    res.json(dbPayment);
+  });
+});
 
-//   const data = await payment.save();
+router.get("/:id", (req, res) => {
+  db.Payment.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: [db.Payment]
+  }).then(function(dbPayment) {
+    res.json(dbPayment);
+  });
+});
 
-//   // removed [ auth ]
+router.put("/:id", (req, res) => {
+  db.Payment.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  }).then(function(dbPayment) {
+    res.json(dbPayment);
+  });
+});
 
-//   res.send(`Payment successfully posted.` + "\n" + `${data}`);
-// });
+router.delete("/:id", (req, res) => {
+  db.Payment.destroy({
+    where: {
+      id: req.body.id
+    }
+  }).then(function(dbPayment) {
+    res.json(dbPayment);
+  });
+});
 
-// // manager payment get
-// router.get("/", async (req, res) => {
-//   if (manager) {
-//     const payments = await Payment.find({});
-//     res.send(payments);
-//   } else {
-//     Payment.find({ email: req.body.email });
-//     res.send(payments);
-//   }
-// });
-
-// router.get("/:id", async (req, res) => {
-//   let payment = await Payment.findById(req.params.id);
-//   res.json(payment);
-// });
-
-// router.put("/:id", async (req, res) => {
-//   await Payment.findOneAndUpdate({ _id: req.params.id }, req.body);
-//   let payment = await Payment.findById(req.params.id);
-//   res.json(payment);
-// });
-
-// router.delete("/:id", async (req, res) => {
-//   let deletedPayment = await Payment.findOneAndDelete({ _id: req.params.id });
-//   res.json(deletedPayment);
-// });
-
-// module.exports = router;
+module.exports = router;

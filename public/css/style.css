@@ -16,6 +16,14 @@ html {
   margin: 5rem auto;
 }
 
+.btn-work {
+  margin: 0 auto;
+  padding: 5px 10px;
+  display: inline-block;
+  line-height: 50px;
+  text-align: center;
+}
+
 /* USER Login Page specific */
 .user-login-body {
   background: url("../img/signinBackground.jpg") no-repeat center center fixed;
@@ -240,5 +248,13 @@ html {
 
 /* footer */
 footer {
-  background-color: rgb(129, 129, 172);
+  background-color: rgb(21, 21, 48);
+}
+
+.footer-copyright {
+  color: white;
+}
+
+footer a {
+  color: rgb(199, 194, 194);
 }

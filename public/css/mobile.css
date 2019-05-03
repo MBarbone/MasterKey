@@ -1,64 +1,70 @@
-@media screen and (max-width: 576px) {
-    #login-select-mk-logo{
-        width: 350px;
-        margin-bottom: 4rem;
-      }
+/* login-select / index.html */
+@media screen and (max-width: 767px) {
+  #login-select-mk-logo {
+    width: 350px;
+    margin-bottom: 4rem;
+  }
 
-    .login-select-btn{
-        margin-bottom: 1.5rem;
-    } 
+  .login-select-btn {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #login-select-mk-logo {
+    width: 350px;
+    margin-bottom: 4rem;
+  }
+
+  .login-select-btn {
+    margin-bottom: 1.5rem;
+  }
 }
 
 @media screen and (max-width: 410px) {
-    #login-select-mk-logo{
-        width: 300px;
-        margin-bottom: 4rem;
-      }
+  #login-select-mk-logo {
+    width: 300px;
+    margin-bottom: 4rem;
+  }
 
-    .login-select-btn{
-        margin-bottom: 1rem;
-        font-size: .75rem;
-    } 
+  .login-select-btn {
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+  }
 }
-
-
 
 /* admin login */
 @media screen and (max-width: 1300px) {
-    #admin-big-key{
-        width:400px;
-        }
-    }
-    
+  #admin-big-key {
+    width: 400px;
+  }
+}
 
 @media screen and (max-width: 900px) {
-    #admin-big-key{
-        width:325px;
-        }
-    }
-
+  #admin-big-key {
+    width: 325px;
+  }
+}
 
 @media screen and (max-width: 767px) {
-    #admin-big-key{
-        width:200px;
-    }
+  #admin-big-key {
+    width: 200px;
+  }
 
-    .p-5{
-        padding:0 !important;
-    }
+  .p-5 {
+    padding: 0 !important;
+  }
 }
 
 @media screen and (max-width: 600px) {
-    #admin-big-key{
-        width:150px;
-    }
-    .pt-5{
-        padding:1rem !important;
-    }
+  #admin-big-key {
+    width: 150px;
+  }
+  .pt-5 {
+    padding: 1rem !important;
+  }
 
-    .pb-5{
-        padding:1rem !important;
-    }
-
+  .pb-5 {
+    padding: 1rem !important;
+  }
 }
-

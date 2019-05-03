@@ -4,8 +4,8 @@ require("express-async-errors");
 const helmet = require("helmet");
 const exphbs = require("express-handlebars");
 
-// const payments = require("./routes/payments");
-// const services = require("./routes/services");
+const payments = require("./routes/payments");
+const services = require("./routes/services");
 const apartments = require("./routes/apartments");
 const users = require("./routes/users");
 // const login = require("./routes/login");
@@ -21,8 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use("/api/users", users);
 // app.use("/api/login", login);
-// app.use("/api/payments", payments);
-// app.use("/api/services", services);
+app.use("/api/payments", payments);
+app.use("/api/services", services);
 app.use("/api/apartments", apartments);
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
