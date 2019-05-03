@@ -4,12 +4,13 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [3]
+        len: [2]
       }
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
       validate: {
         len: [5]
       }
@@ -28,16 +29,12 @@ module.exports = function(sequelize, DataTypes) {
     unit: {
       type: DataTypes.STRING,
       allowNull: false
-    },
-    _apartment: {
-      type: DataTypes.INT,
-      defaultValue: false
     }
   });
   User.associate = function(models) {
-    User.belongsTo(models.Apartments, {
+    User.belongsTo(models.Apartment, {
       foreignKey: {
-        allowNull: true
+        allowNull: false
       }
     });
   };

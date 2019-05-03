@@ -2,7 +2,8 @@ module.exports = function(sequelize, DataTypes) {
   const Apartment = sequelize.define("Apartment", {
     address: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      unique: true
     },
     city: {
       type: DataTypes.STRING,
@@ -13,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     zip: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       validate: {
         len: [5]
       }
@@ -21,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Apartment.associate = function(models) {
-    Apartment.hasMany(models.Users, { as: "Users" });
+    Apartment.hasMany(models.User);
   };
 
   return Apartment;
