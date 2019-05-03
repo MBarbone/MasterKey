@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   let user = await db.User.findOne({ email: req.body.email });
-  console.log("DEBUG apartment check", user);
+  console.log("DEBUG User check", user);
   if (user) {
     return res.status(409).send("This user already exists");
   }
@@ -34,20 +34,35 @@ router.get("/", (req, res) => {
   });
 });
 
-// router.get("/:id", async (req, res) => {
-//   const user = await User.findById(req.params.id);
-//   res.json(user);
-// });
+router.get("/:id", (req, res) => {
+  db.User.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: [db.User]
+  }).then(function(dbUser) {
+    res.json(dbUser);
+  });
+});
 
-// router.put("/:id", async (req, res) => {
-//   await User.findOneAndUpdate({ _id: req.params.id }, req.body);
-//   const newUser = await User.findById(req.params.id);
-//   res.json(newUser);
-// });
+router.put("/:id", (req, res) => {
+  db.User.update(req.body, {
+    where: {
+      id: req.body.id
+    }
+  }).then(function(dbUser) {
+    res.json(dbUser);
+  });
+});
 
-// router.delete("/:id", async (req, res) => {
-//   const deletedUser = await User.findOneAndDelete({ _id: req.params.id });
-//   res.json(deletedUser);
-// });
+router.delete("/:id", (req, res) => {
+  db.User.destroy({
+    where: {
+      id: req.body.id
+    }
+  }).then(function(dbUser) {
+    res.json(dbUser);
+  });
+});
 
 module.exports = router;

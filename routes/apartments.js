@@ -45,30 +45,36 @@ router.get("/", (req, res) => {
     res.json(dbApartment);
   });
 });
-// router.get("/:id", async (req, res) => {
-//   let apartment = await Apartment.findById(req.params.id);
-//   res.json(apartment);
-// });
 
-// router.put("/:id", async (req, res) => {
-//   await Apartment.findOneAndUpdate({ _id: req.params.id }, req.body);
-//   let apartment = await Apartment.findById(req.params.id);
-//   res.json(apartment);
-// });
+router.get("/:id", (req, res) => {
+  db.Apartment.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: [db.User]
+  }).then(function(dbApartment) {
+    res.json(dbApartment);
+  });
+});
 
-// router.delete("/:id", async (req, res) => {
-//   let deletedApartment = await Apartment.findOneAndDelete({
-//     _id: req.params.id
-//   });
-//   res.json(deletedApartment);
-// });
+router.put("/:id", (req, res) => {
+  db.Apartment.update(req.body, {
+    where: {
+      id: req.body.id
+    }
+  }).then(function(dbApartment) {
+    res.json(dbApartment);
+  });
+});
 
-// router.get("/:id/tenants", async (req, res) => {
-//   let apartment = await Apartment.findById(req.params.id);
-//   res.json(apartment);
-
-//   const tenants = await Apartment.find({ _tenant: req.params._tenant });
-//   res.json("sucess");
-// });
+router.delete("/:id", (req, res) => {
+  db.Apartment.destroy({
+    where: {
+      id: req.body.id
+    }
+  }).then(function(dbApartment) {
+    res.json(dbApartment);
+  });
+});
 
 module.exports = router;
