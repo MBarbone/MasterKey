@@ -1,0 +1,244 @@
+/* user/admin select */
+
+html {
+  height: 100%;
+}
+
+#login-select-body {
+  min-height: auto;
+}
+
+#login-select-mk-logo {
+  width: 500px;
+  height: auto;
+  clear: right;
+  display: block;
+  margin: 5rem auto;
+}
+
+/* USER Login Page specific */
+.user-login-body {
+  background: url("../img/signinBackground.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* Login page overlap */
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: 0.75rem;
+}
+
+.mx-auto {
+  margin-top: 9rem;
+}
+
+.login-key {
+  width: 4rem;
+  padding-right: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.card-signin {
+  border: 0;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-signin .card-title {
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.card-signin .card-body {
+  padding: 2rem;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  font-size: 80%;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group input {
+  height: auto;
+  border-radius: 2rem;
+}
+
+.form-label-group > input,
+.form-label-group > label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.form-label-group > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-label-group input:not(:placeholder-shown) ~ label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #777;
+}
+
+.btn-google {
+  color: white;
+  background-color: #ea4335;
+}
+
+.forgot-password {
+  color: rgb(26, 25, 25) !important;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1rem;
+  font-size: 80%;
+  padding: rem;
+}
+.forgot-password:hover {
+  text-decoration: underline !important;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* ADMIN login specific */
+
+@media (min-width: 768px) {
+  .h-md-100 {
+    height: 100vh;
+  }
+}
+.btn-round {
+  border-radius: 30px;
+}
+.left-half {
+  background: lightgrey;
+}
+#admin-big-key {
+  width: 450px;
+}
+
+/* user template */
+.nav-link {
+  margin: 2.5px 10px 0 10px;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+#currentWeather {
+  right: 0;
+  position: absolute;
+  padding-right: 1.5rem;
+  color: white;
+}
+#currentWeather:hover {
+  text-decoration: none;
+}
+
+.user-home-mk-logo {
+  width: 300px;
+  margin-top: 30px;
+}
+
+.bulletin-container {
+  border: 1px solid black;
+  margin-top: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: white;
+}
+
+.info-divs {
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+.info-left {
+  margin-left: 10px;
+  background-color: white;
+}
+
+.info-right {
+  margin-right: 10px;
+  background-color: white;
+}
+
+#bulletin {
+  text-decoration: underline;
+}
+
+.user-headers {
+  margin-top: 1rem;
+}
+
+.user-body {
+  background-color: rgb(235, 235, 235);
+}
+
+.fa-homePage {
+  margin-right: 0.75rem;
+}
+
+.service-request-form {
+  margin-top: 1.5rem;
+  background-color: white;
+  box-shadow: 5px 5px 35px grey;
+}
+
+.service-submit-btn {
+  background-color: rgb(140, 115, 74);
+  color: white;
+}
+
+/* footer */
+footer {
+  background-color: rgb(129, 129, 172);
+}
