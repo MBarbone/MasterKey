@@ -27,6 +27,18 @@
               <h3 class="card-title text-center"><img class="login-key" src="./img/key.png"></img>Register</h3>
               <form class="form-signin">
                 <div class="form-label-group">
+                    <input
+                    type="text"
+                    id="inputName"
+                    class="form-control"
+                    placeholder="Name"
+                    required
+                    autofocus
+                    />
+                    <label for="inputName">Name</label>
+                  </div>
+
+                <div class="form-label-group">
                   <input
                   type="email"
                   id="inputEmail"
@@ -35,19 +47,52 @@
                   required
                   autofocus
                   />
-                  <label for="inputEmail">Email address</label>
+                  <label for="inputEmail">Email Address</label>
                 </div>
                 
-                <div class="form-label-group">
-                  <input
-                  type="password"
-                  id="inputPassword"
-                  class="form-control"
-                  placeholder="Password"
-                  required
-                  />
-                  <label for="inputPassword">Create Password</label>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-label-group">
+                      <input
+                      type="password"
+                      id="inputPassword"
+                      class="form-control"
+                      placeholder="Password"
+                      required
+                      autofocus
+                      />
+                      <label for="inputPassword">Password</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <button id="generatePassword" class="btn btn-primary">Create Password</button>
+                  </div>
+
                 </div>
+
+                <div class="btn-group dropright form-label-group">
+                    <button type="button" id="user-type-btn" class="btn btn-primary">User Type</button>
+                    <button type="button" id="user-type-toggle" class="btn btn-primary dropdown-toggle px-3" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item">Manager</a>
+                      <a class="dropdown-item">Tenant</a>
+                    </div>
+                  </div>
+                  <div class="form-label-group">
+                    <input
+                    type="text"
+                    id="inputUnit"
+                    class="form-control"
+                    placeholder="Apartment Unit"
+                    required
+                    autofocus
+                    />
+                    <label for="inputUnit">Apartment Unit</label>
+                  </div>
+                    
     
             
                 <button
@@ -57,8 +102,7 @@
                 Register
                 </button>
             
-            
-          </form>
+              </form>
       
     </div>
   </div>
