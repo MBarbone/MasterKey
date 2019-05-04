@@ -3,7 +3,7 @@ const express = require("express");
 require("express-async-errors");
 const helmet = require("helmet");
 const exphbs = require("express-handlebars");
-
+const adminHtml = require("./routes/admin-html-routes");
 const payments = require("./routes/payments");
 const services = require("./routes/services");
 const apartments = require("./routes/apartments");
@@ -19,6 +19,10 @@ app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+
+// html routes
+app.use("/", adminHtml);
+
 app.use("/api/users", users);
 // app.use("/api/login", login);
 app.use("/api/payments", payments);

@@ -26,7 +26,7 @@ $.ajax({
 // change text of registration button on seleciton
 $(function() {
   $(".dropdown-menu a").click(function() {
-    $(".btn:first-child").text($(this).text());
-    $(".btn:first-child").val($(this).text());
+    $("#user-type-btn:first-child").text($(this).text());
+    $("#user-type-btn:first-child").val($(this).text());
   });
 });

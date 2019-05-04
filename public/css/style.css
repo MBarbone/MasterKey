@@ -135,6 +135,11 @@ html {
   color: #777;
 }
 
+.btn-google {
+  color: white;
+  background-color: #ea4335;
+}
+
 .forgot-password {
   color: rgb(26, 25, 25) !important;
   text-align: center;
@@ -247,7 +252,7 @@ html {
 #generatePassword {
   text-transform: capitalize;
   font-size: 80%;
-  padding: 10px;
+  padding: 11px;
   border-radius: 8px;
 }
 
