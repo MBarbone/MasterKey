@@ -324,6 +324,10 @@ html {
   margin-left: 10px;
 }
 
+.modal-header {
+  text-align: center;
+}
+
 /* footer */
 footer {
   background-color: rgb(21, 21, 48);

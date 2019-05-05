@@ -65,9 +65,62 @@
   </div>
 
 
+  <!-- Button trigger modal -->
   <div class="col-md-2 text-center">
-    <button type="button" class="btn add-btn btn-xl"><i class="fa fa-plus plus-white"></i>
+    <button type="button" class="btn add-btn btn-xl" data-toggle="modal" data-target="#basicExampleModal"><i
+        class="fa fa-plus plus-white"></i>
     </button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Bulding Name</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3 class="card-title text-center"><img class="login-key" src="../img/key.png"></img>New Tenant</h3>
+          <form class="form-signin" method="POST" action="./email/email.php">
+            <div class="form-label-group">
+              <input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus />
+              <label for="inputName">Name</label>
+            </div>
+
+            <div class="form-label-group">
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus />
+              <label for="inputEmail">Email Address</label>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" disabled
+                    required autofocus />
+                  <label for="inputPassword">Password</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <button type="button" id="generatePassword" class="btn btn-primary">Create Password</button>
+              </div>
+
+            </div>
+            <div class="form-label-group">
+              <input type="text" id="inputUnit" class="form-control" placeholder="Apartment Unit" required autofocus />
+              <label for="inputUnit">Apartment Unit</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>
