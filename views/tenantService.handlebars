@@ -1,48 +1,112 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md text-center">
-      <img class="img-fluid user-home-mk-logo z-depth-1" src="../img/masterkey.png" alt="MasterKey | Logo" />
+<div class="row">
+  <div class="col-md-10">
+    <h1 class="page-header">Current Service Requests</h1>
+  </div>
+  <div class="col-md-2 text-center">
+    <button type="button" class="btn add-btn btn-xl" data-toggle="modal" data-target="#addModal"><i
+        class="fa fa-plus plus-white"></i>
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-10">
+    <div class="card">
+      <div class="card-header">
+        Date
+      </div>
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <div class="row text-here">
+            <div class="col-md-10">
+              <h2>Request Type</h2>
+              <h4>Request Details</h4>
+            </div>
+            <div class="col-md-2">
+              <div class="row">
+                <div class="col-md-6 text-left">
+                  <button type="button" class="btn btn-sm btn-delete-entry align-middle" data-toggle="modal"
+                    data-target="#deleteModal"><i class="fas fa-minus-circle"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      </blockquote>
     </div>
   </div>
 
-  <!-- Default form contact -->
-  <form class="text-center border border-dark p-5 service-request-form">
-    <p class="h4 mb-4">Service Request</p>
 
-    <!-- Name -->
-    <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name" />
 
-    <!-- Email -->
-    <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail" />
+  <!-- Button trigger modal -->
+  <div class="col-md-2">
+  </div>
+</div>
 
-    <!-- Subject -->
-    <label class="h4 mb-4">Tell us about the problem</label>
-    <select class="browser-default custom-select mb-4">
-      <option value="" disabled selected>Choose option</option>
-      <option value="1">Electrical</option>
-      <option value="2">Plumbing</option>
-      <option value="3">Windows & Doors</option>
-      <option value="4">AC & Heat</option>
-      <option value="4">Appliances</option>
-      <option value="4">Other</option>
-    </select>
+<!-- Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Request</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3 class="card-title text-center"><img class="login-key" src="../img/key.png"></img>Service Request</h3>
+        <form class="form-signin" method="POST" action="./email/email.php">
 
-    <!-- Message -->
-    <div class="form-group">
-      <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4"
-        placeholder="Message"></textarea>
+          <div class="form-label-group">
+            <select class="browser-default custom-select mb-4">
+              <option value="" disabled selected>Choose option</option>
+              <option value="1">Electrical</option>
+              <option value="2">Plumbing</option>
+              <option value="3">Windows & Doors</option>
+              <option value="4">AC & Heat</option>
+              <option value="4">Appliances</option>
+              <option value="4">Other</option>
+            </select>
+          </div>
+
+
+          <div class="form-label-group">
+            <div class="form-group">
+              <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="4"
+                placeholder="Message"></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
-
-    <!-- Copy -->
-    <div class="custom-control custom-checkbox mb-4">
-      <input type="checkbox" class="custom-control-input" id="defaultContactFormCopy" />
-      <label class="custom-control-label" for="defaultContactFormCopy">Send me a copy of this message</label>
+  </div>
+</div>
+<!--Delete Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Bulding Name</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-center"><i class="fas fa-times-circle fa-5x"></i></p>
+        <h2 class="card-title text-center">Are you sure?</h2>
+        <p class="text-center">Are you sure you want to delete this tenant?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger">Delete</button>
+      </div>
     </div>
-
-    <!-- Send button -->
-    <button class="btn btn-block service-submit-btn" type="submit">
-      Send
-    </button>
-  </form>
-  <!-- Default form contact -->
+  </div>
 </div>
