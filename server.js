@@ -3,6 +3,7 @@ const express = require("express");
 require("express-async-errors");
 const helmet = require("helmet");
 const exphbs = require("express-handlebars");
+const bodyParser = require("body-parser");
 const adminHtml = require("./routes/admin-html-routes");
 const payments = require("./routes/payments");
 const services = require("./routes/services");
@@ -16,8 +17,8 @@ const app = express();
 const db = require("./models");
 
 app.use(helmet());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(express.static("public"));
 
 // html routes
