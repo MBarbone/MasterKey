@@ -21,16 +21,32 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // html routes
-app.use("/", adminHtml);
+// app.use("/", adminHtml);
 
-app.use("/api/users", users);
-// app.use("/api/login", login);
-app.use("/api/payments", payments);
-app.use("/api/services", services);
-app.use("/api/apartments", apartments);
+// app.use("/api/users", users);
+// // app.use("/api/login", login);
+// app.use("/api/payments", payments);
+// app.use("/api/services", services);
+// app.use("/api/apartments", apartments);
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+app.get("/tenant/home", async (req, res) => {
+  res.render("tenantHome");
+});
+
+app.get("/tenant/services", async (req, res) => {
+  res.render("tenantService");
+});
+
+app.get("/admin/home", async (req, res) => {
+  res.render("adminHome");
+});
+
+app.get("/admin/building", async (req, res) => {
+  res.render("buildingTenants");
+});
 
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {

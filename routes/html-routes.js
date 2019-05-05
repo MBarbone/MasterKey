@@ -1,7 +1,7 @@
 // const path = require("path");
 // const express = require("express");
 
-// // login page selection
+// login page selection
 // router.get("/", (res, req) => {
 //   res.sendfile(path.join(__dirname, "../public/index.html"));
 // });

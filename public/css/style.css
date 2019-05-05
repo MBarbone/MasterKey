@@ -270,6 +270,60 @@ html {
   border-bottom-right-radius: 8px;
 }
 
+/* admin home - view all buildings */
+.card {
+  margin: 20px 0;
+  margin-left: 10px;
+}
+
+.card:hover {
+  margin: 20px 0;
+  margin-left: 10px;
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+.add-btn {
+  background-color: #8c734a;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 20px;
+  line-height: 1.5;
+  border-radius: 70px;
+  margin-top: 25px;
+}
+
+.plus-white {
+  color: white;
+}
+
+.btn-edit-entry {
+  background-color: rgb(0, 0, 161);
+  line-height: 2;
+  border-radius: 100px;
+}
+
+.fa-pencil-alt {
+  color: white;
+}
+
+.btn-delete-entry {
+  background-color: rgb(201, 2, 2);
+  line-height: 2;
+  border-radius: 100px;
+}
+
+.fa-minus-circle {
+  color: white;
+}
+
+.page-header {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
 /* footer */
 footer {
   background-color: rgb(21, 21, 48);

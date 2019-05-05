@@ -9,13 +9,13 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   <!-- Bootstrap core CSS -->
-  <link href="./mdb/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../mdb/css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="./mdb/css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/mobile.css" rel="stylesheet">
-  <link rel="shortcut icon" href="./img/key.png" type="image/png">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/mobile.css" rel="stylesheet">
+  <link rel="../shortcut icon" href="../img/key.png" type="image/png">
     
   </head>
   <body class="user-login-body">
@@ -24,7 +24,7 @@
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
           <div class="card card-signin my-5">
             <div class="card-body">
-              <h3 class="card-title text-center"><img class="login-key" src="./img/key.png"></img>Register</h3>
+              <h3 class="card-title text-center"><img class="login-key" src="../img/key.png"></img>Register</h3>
               <form class="form-signin" method="POST" action="./email/email.php">
                 <div class="form-label-group">
                     <input
@@ -108,10 +108,10 @@
     </div>
   </div>
 </div>
-</body>
+
 <!-- SCRIPTS -->
   <!-- JQuery -->
-  <script type="text/javascript" src="./mdb/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../mdb/js/jquery-3.3.1.min.js"></script>
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src="./mdb/js/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
@@ -127,14 +127,12 @@ $('input[type=text],textarea').bind('copy paste cut drag drop', function (e) {
    e.preventDefault();
 });
 
-  function ranNum() {
   $("#generatePassword").on("click", function() {
+    console.log("DEBUG button click");
     const num =(Math.floor(Math.random() * (100000000000000000000 - 10000000)) + 1);
     console.log(num);
     $("#inputPassword").val(num);
   });
-}
-
-ranNum();
 </script>
+</body>
 </html>
