@@ -1,36 +1,26 @@
 require("dotenv").config();
 const express = require("express");
-require("express-async-errors");
+// require("express-async-errors");
 // const helmet = require("helmet");
-const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
+const exphbs = require("express-handlebars");
 const db = require("./models");
-// const path = require("path");
-// const adminHtml = require("./routes/admin-html-routes");
-// const payments = require("./routes/payments");
-// const services = require("./routes/services");
-// const apartments = require("./routes/apartments");
-// const users = require("./routes/users");
-// const login = require("./routes/login2");
+const path = require("path");
+const passport = require("passport");
+const flash = require("connect-flash");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+require("./config/passport")(passport);
 
 const app = express();
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+const jsonParser = bodyParser.json();
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 app.use(express.static("public"));
-
-// html routes
-// app.use("/", adminHtml);
-
-// app.use("/api/users", users);
-// // app.use("/api/login", login);
-// app.use("/api/payments", payments);
-// app.use("/api/services", services);
-// app.use("/api/apartments", apartments);
 
 // app.get("/", function(req, res) {
 //   res.sendFile(path.join(__dirname, "/public/html/index.html"));
@@ -44,42 +34,43 @@ app.use(express.static("public"));
 //   res.sendFile(path.join(__dirname, "/public/html/admin-login.html"));
 // });
 
-// app.get("/tenant/home", async (req, res) => {
-//   res.render("tenantHome");
+// // app.get("/tenant/home", async (req, res) => {
+// //   res.render("tenantHome");
+// // });
+
+// // app.get("/tenant/services", async (req, res) => {
+// //   res.render("tenantService");
+// // });
+
+// app.get("/admin/home", async (req, res) => {
+//   res.render("adminHome");
 // });
 
-// app.get("/tenant/services", async (req, res) => {
-//   res.render("tenantService");
+// app.post("/admin/home", jsonParser, async (req, res) => {
+//   console.log("post new building", req.body);
+//   res.json(req.body);
+//   // res.redirect("/admin/home");
 // });
 
-app.get("/admin/home", async (req, res) => {
-  res.render("adminHome");
-});
+// // app.get("/admin/building", async (req, res) => {
+// //   res.render("buildingTenants");
+// // });
 
-app.post("/admin/home", async (req, res) => {
-  console.log("post new building", req.body);
-  res.json(req.body);
-});
+// // app.get("/tenant/home", async (req, res) => {
+// //   res.render("tenantHome");
+// // });
 
-// app.get("/admin/building", async (req, res) => {
-//   res.render("buildingTenants");
-// });
+// // app.get("/admin/payments", async (req, res) => {
+// //   res.render("adminPayments");
+// // });
 
-// app.get("/tenant/home", async (req, res) => {
-//   res.render("tenantHome");
-// });
+// // app.get("/tenant/services", async (req, res) => {
+// //   res.render("tenantService");
+// // });
 
-// app.get("/admin/payments", async (req, res) => {
-//   res.render("adminPayments");
-// });
-
-// app.get("/tenant/services", async (req, res) => {
-//   res.render("tenantService");
-// });
-
-// app.get("/tenant/payments", async (req, res) => {
-//   res.render("tenantPayment");
-// });
+// // app.get("/tenant/payments", async (req, res) => {
+// //   res.render("tenantPayment");
+// // });
 
 const PORT = process.env.PORT || 3000;
 
