@@ -1,23 +1,25 @@
 require("dotenv").config();
 const express = require("express");
 require("express-async-errors");
-const helmet = require("helmet");
+// const helmet = require("helmet");
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
 const path = require("path");
-const adminHtml = require("./routes/admin-html-routes");
-const payments = require("./routes/payments");
-const services = require("./routes/services");
-const apartments = require("./routes/apartments");
-const users = require("./routes/users");
+// const adminHtml = require("./routes/admin-html-routes");
+// const payments = require("./routes/payments");
+// const services = require("./routes/services");
+// const apartments = require("./routes/apartments");
+// const users = require("./routes/users");
 // const login = require("./routes/login2");
 
 const PORT = process.env.PORT || 8080;
 const app = express();
 
 const db = require("./models");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-app.use(helmet());
+// app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
@@ -30,9 +32,6 @@ app.use(express.static("public"));
 // app.use("/api/payments", payments);
 // app.use("/api/services", services);
 // app.use("/api/apartments", apartments);
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
 
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "/public/html/index.html"));
@@ -56,6 +55,10 @@ app.get("/tenant/services", async (req, res) => {
 
 app.get("/admin/home", async (req, res) => {
   res.render("adminHome");
+});
+
+app.post("/admin/home/new_building", async (req, res) => {
+  console.log("post new building", req.body);
 });
 
 app.get("/admin/building", async (req, res) => {

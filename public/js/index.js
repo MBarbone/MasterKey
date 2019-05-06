@@ -22,11 +22,3 @@ $.ajax({
   // add temperature and city values to menu UI
   $("#currentWeather").prepend(currentTemp);
 });
-
-// change text of registration button on seleciton
-$(function() {
-  $(".dropdown-menu a").click(function() {
-    $("#user-type-btn:first-child").text($(this).text());
-    $("#user-type-btn:first-child").val($(this).text());
-  });
-});
