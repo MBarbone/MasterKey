@@ -1,4 +1,4 @@
-const cityInput = "Brooklyn";
+const cityInput = "New York";
 const queryURL =
   "https://api.openweathermap.org/data/2.5/weather?q=" +
   cityInput +

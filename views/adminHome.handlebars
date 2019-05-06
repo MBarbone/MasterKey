@@ -34,14 +34,48 @@
     </div>
   </div>
 
+  <form class="form-signin" action="/admin/home" method="POST">
+    <div class="form-label-group">
+      <input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus />
+      <label for="inputName">Name</label>
+    </div>
+
+    <div class="form-label-group">
+      <input type="text" id="inputAddress" class="form-control" placeholder="Address" required autofocus />
+      <label for="inputAddress">Address</label>
+    </div>
 
 
-  <!-- Button trigger modal -->
-  <div class="col-md-2 text-center">
-    <button type="button" class="btn add-btn btn-xl" data-toggle="modal" data-target="#addModal"><i
-        class="fa fa-plus plus-white"></i>
-    </button>
-  </div>
+    <div class="form-label-group">
+      <input type="text" id="inputCity" class="form-control" placeholder="City" required autofocus />
+      <label for="inputCity">City</label>
+    </div>
+
+    <div class="form-label-group">
+      <input type="text" id="inputState" class="form-control" placeholder="State" required autofocus />
+      <label for="inputState">State</label>
+    </div>
+
+    <div class="form-label-group">
+      <input type="text" id="inputZip" class="form-control" placeholder="Zip" required autofocus />
+      <label for="inputZip">Zip</label>
+    </div>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+  <button type="submit" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+</div>
+</form>
+
+
+
+<!-- Button trigger modal -->
+<div class="col-md-2 text-center">
+  <button type="button" class="btn add-btn btn-xl" data-toggle="modal" data-target="#addModal"><i
+      class="fa fa-plus plus-white"></i>
+  </button>
+</div>
 </div>
 
 <!-- Modal -->
@@ -57,14 +91,14 @@
       </div>
       <div class="modal-body">
         <h3 class="card-title text-center"><img class="login-key" src="../img/key.png"></img>New Building</h3>
-        <form class="form-signin" method="POST" action="./email/email.php">
+        <form class="form-signin" action="/admin/home" method="POST">
           <div class="form-label-group">
             <input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus />
             <label for="inputName">Name</label>
           </div>
 
           <div class="form-label-group">
-            <input type="email" id="inputAddress" class="form-control" placeholder="Address" required autofocus />
+            <input type="text" id="inputAddress" class="form-control" placeholder="Address" required autofocus />
             <label for="inputAddress">Address</label>
           </div>
 
@@ -78,13 +112,18 @@
             <input type="text" id="inputState" class="form-control" placeholder="State" required autofocus />
             <label for="inputState">State</label>
           </div>
-        </form>
+
+          <div class="form-label-group">
+            <input type="text" id="inputZip" class="form-control" placeholder="Zip" required autofocus />
+            <label for="inputZip">Zip</label>
+          </div>
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary" data-dismiss="modal">Save changes</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
