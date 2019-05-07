@@ -6,7 +6,7 @@ const router = express.Router();
 var generator = require("generate-password");
 
 router.post("/", async (req, res) => {
-  let user = await db.User.findOne({ email: req.body.email });
+  let user = await db.User.findOne({ where: { email: req.body.email } });
   console.log("[DEBUG] POST /api/users", user);
   if (user) {
     return res.status(409).send("This user already exists");
@@ -68,7 +68,7 @@ router.put("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
   db.User.destroy({
     where: {
-      id: req.body.id
+      id: req.params.id
     }
   }).then(function(dbUser) {
     res.json(dbUser);

@@ -18,7 +18,7 @@ app.set("view engine", "handlebars");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(express.static(__dirname + 'public'));
+// app.use(express.static(__dirname + "public"));
 
 app.use(express.static("public"));
 
@@ -34,13 +34,13 @@ app.get("/admin/login", async (req, res) => {
   res.sendFile(path.join(__dirname, "/public/html/admin-login.html"));
 });
 
-// app.get("/tenant/home", async (req, res) => {
-//   res.render("tenantHome");
-// });
+app.get("/tenant/home", async (req, res) => {
+  res.render("tenantHome");
+});
 
-// app.get("/tenant/services", async (req, res) => {
-//   res.render("tenantService");
-// });
+app.get("/tenant/services", async (req, res) => {
+  res.render("tenantService");
+});
 
 app.get("/admin/home", async (req, res) => {
   res.render("adminHome");
@@ -69,25 +69,25 @@ app.get("/admin/building/:id", async (req, res) => {
 app.use("/api/users", require("./routes/users"));
 app.use("/api/apartments", require("./routes/apartments"));
 
-// app.get("/admin/building", async (req, res) => {
-//   res.render("buildingTenants");
-// });
+app.get("/admin/building", async (req, res) => {
+  res.render("buildingTenants");
+});
 
-// app.get("/tenant/home", async (req, res) => {
-//   res.render("tenantHome");
-// });
+app.get("/tenant/home", async (req, res) => {
+  res.render("tenantHome");
+});
 
-// app.get("/admin/payments", async (req, res) => {
-//   res.render("adminPayments");
-// });
+app.get("/admin/payments", async (req, res) => {
+  res.render("adminPayments");
+});
 
-// app.get("/tenant/services", async (req, res) => {
-//   res.render("tenantService");
-// });
+app.get("/tenant/services", async (req, res) => {
+  res.render("tenantService");
+});
 
-// app.get("/tenant/payments", async (req, res) => {
-//   res.render("tenantPayment");
-// });
+app.get("/tenant/payments", async (req, res) => {
+  res.render("tenantPayment");
+});
 
 const PORT = process.env.PORT || 3000;
 
