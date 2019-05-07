@@ -4,13 +4,12 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   let apartment = await db.Apartment.findOne({ address: req.body.address });
-  console.log("DEBUG apartment check", apartment);
+  console.log("[DEBUG] POST /api/apartments", apartment);
   if (apartment) {
     return res.status(409).send("This apartment building already exists");
   }
-  await db.Apartment.create(req.body).then(function(dbApartment) {
-    res.json(dbApartment);
-  });
+  const newApt = await db.Apartment.create(req.body);
+  res.json(newApt);
 });
 
 //   // // If User is not a manager, return error.

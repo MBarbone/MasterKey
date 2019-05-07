@@ -271,12 +271,12 @@ html {
 }
 
 /* admin home - view all buildings */
-.card {
+.adminCard {
   margin: 20px 0;
   margin-left: 10px;
 }
 
-.card:hover {
+.adminCard:hover {
   margin: 20px 0;
   margin-left: 10px;
   transform: scale(1.01);

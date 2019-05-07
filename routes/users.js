@@ -3,15 +3,25 @@ const express = require("express");
 const router = express.Router();
 // const bcrypt = require("bcryptjs");
 
+var generator = require("generate-password");
+
 router.post("/", async (req, res) => {
   let user = await db.User.findOne({ email: req.body.email });
-  console.log("DEBUG User check", user);
+  console.log("[DEBUG] POST /api/users", user);
   if (user) {
     return res.status(409).send("This user already exists");
   }
-  await db.User.create(req.body).then(function(dbUser) {
-    res.json(dbUser);
+  const password =
+    req.body.password ||
+    generator.generate({
+      length: 10,
+      numbers: true
+    });
+  const newUser = await db.User.create({
+    ...req.body,
+    password
   });
+  res.json(newUser);
 });
 
 // let user = await User.findOne({ email: req.body.email });
