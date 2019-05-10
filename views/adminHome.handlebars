@@ -171,9 +171,10 @@
     event.preventDefault();
     const name = document.getElementById('inputName').value;
     const currentBuildingId = "{{id}}";
-    const email = document.getElementById('inputEmail').value;
-    const unit = document.getElementById('inputUnit').value;
-    const rent = document.getElementById('inputRent').value;
+    const address = document.getElementById('inputAddress').value;
+    const city = document.getElementById('inputCity').value;
+    const state = document.getElementById('inputState').value;
+    const zip = document.getElementById('inputZip').value;
     fetch("/api/apartments", {
       method: "POST",
       headers: {
@@ -181,8 +182,10 @@
       },
       body: JSON.stringify({
         name,
-        email,
-        unit,
+        address,
+        city,
+        state,
+        zip,
         ApartmentId: currentBuildingId
       })
     })
