@@ -12,6 +12,21 @@ router.post("/", async (req, res) => {
   res.json(newApt);
 });
 
+router.post("/", async (req, res) => {
+  let apartment = await db.Apartment.findOne({
+    where: { email: req.body.address }
+  });
+  console.log("[DEBUG] POST /api/apartments", apartment);
+  if (apartment) {
+    return res.status(409).send("This user apartment building exists");
+  }
+
+  const newApt = await db.Apartment.create({
+    ...req.body
+  });
+  res.json(newApt);
+});
+
 //   // // If User is not a manager, return error.
 //   // if (!req.user.isManager) res.status(400).json("Invalid token.");
 //   // Create the apartment

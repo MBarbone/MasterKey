@@ -42,17 +42,11 @@ app.get("/tenant/services", async (req, res) => {
   res.render("tenantService");
 });
 
-app.get("/admin/home", async (req, res) => {
-  res.render("adminHome");
+app.get("/admin/buildings", async (req, res) => {
+  res.render("adminBuildings");
 });
 
-app.post("/admin/home", async (req, res) => {
-  console.log("post new building", req.body);
-  res.json(req.body);
-  // res.redirect("/admin/home");
-});
-
-app.get("/admin/building/:id", async (req, res) => {
+app.get("/admin/buildings/:id", async (req, res) => {
   const apartment = await db.Apartment.findOne({
     where: {
       id: parseInt(req.params.id)
