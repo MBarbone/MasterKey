@@ -63,9 +63,9 @@ app.get("/admin/buildings/:id", async (req, res) => {
 app.use("/api/users", require("./routes/users"));
 app.use("/api/apartments", require("./routes/apartments"));
 
-app.get("/admin/building", async (req, res) => {
-  res.render("buildingTenants");
-});
+// app.get("/admin/building", async (req, res) => {
+//   res.render("buildingTenants");
+// });
 
 app.get("/tenant/home", async (req, res) => {
   res.render("tenantHome");
