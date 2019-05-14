@@ -45,14 +45,13 @@
   </div>
 </div>
 
-
 <!-- Modal -->
 <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">MasterKey</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Bulding {{ApartmentId}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -61,18 +60,15 @@
         <h3 class="card-title text-center"><img class="login-key" src="../../img/key.png"></img>New Building</h3>
         <form id="create-building" class="form-signin">
           <div class="form-label-group">
-          </div>
-
-          <div class="form-label-group">
             <input type="text" id="inputAddress" class="form-control" placeholder="Address" required autofocus />
             <label for="inputAddress">Address</label>
           </div>
-
 
           <div class="form-label-group">
             <input type="text" id="inputCity" class="form-control" placeholder="City" required autofocus />
             <label for="inputCity">City</label>
           </div>
+
 
           <div class="form-label-group">
             <input type="text" id="inputState" class="form-control" placeholder="State" required autofocus />
@@ -83,13 +79,12 @@
             <input type="text" id="inputZip" class="form-control" placeholder="Zip" required autofocus />
             <label for="inputZip">Zip</label>
           </div>
-
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" data-dismiss="modal">Save changes</button>
-      </div>
-      </form>
     </div>
   </div>
 </div>
