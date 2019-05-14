@@ -271,7 +271,8 @@ html {
 }
 
 /* admin home - view all buildings */
-.adminCard {
+.adminCard,
+.tenantCard {
   margin: 20px 0;
   margin-left: 10px;
 }
@@ -313,6 +314,14 @@ html {
   background-color: rgb(201, 2, 2);
   line-height: 2;
   border-radius: 100px;
+}
+
+.btn-edit-entry:hover {
+  transform: scale(1.075);
+}
+
+.btn-delete-entry:hover {
+  transform: scale(1.075);
 }
 
 .fa-minus-circle {
