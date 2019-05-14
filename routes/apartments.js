@@ -14,7 +14,7 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   let apartment = await db.Apartment.findOne({
-    where: { email: req.body.address }
+    where: { address: req.body.address }
   });
   console.log("[DEBUG] POST /api/apartments", apartment);
   if (apartment) {
