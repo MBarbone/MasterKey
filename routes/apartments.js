@@ -2,15 +2,15 @@ const db = require("../models");
 const express = require("express");
 const router = express.Router();
 
-router.post("/", async (req, res) => {
-  let apartment = await db.Apartment.findOne({ address: req.body.address });
-  console.log("[DEBUG] POST /api/apartments", apartment);
-  if (apartment) {
-    return res.status(409).send("This apartment building already exists");
-  }
-  const newApt = await db.Apartment.create(req.body);
-  res.json(newApt);
-});
+// router.post("/", async (req, res) => {
+//   let apartment = await db.Apartment.findOne({ address: req.body.address });
+//   console.log("[DEBUG] POST /api/apartments", apartment);
+//   if (apartment) {
+//     return res.status(409).send("This apartment building already exists");
+//   }
+//   const newApt = await db.Apartment.create(req.body);
+//   res.json(newApt);
+// });
 
 router.post("/", async (req, res) => {
   let apartment = await db.Apartment.findOne({
