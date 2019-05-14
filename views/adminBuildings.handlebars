@@ -8,8 +8,8 @@
         <blockquote class="blockquote mb-0">
           <div class="row text-here">
             <div class="col-md-10">
-              <h2>The Gardens</h2>
-              <h4>223 awesome street</h4>
+              <h2>223 awesome street</h2>
+              <h4>Hoboken, NJ</h4>
             </div>
             <div class="col-md-2">
               <div class="row">
@@ -61,8 +61,6 @@
         <h3 class="card-title text-center"><img class="login-key" src="../../img/key.png"></img>New Building</h3>
         <form id="create-building" class="form-signin">
           <div class="form-label-group">
-            <input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus />
-            <label for="inputName">Name</label>
           </div>
 
           <div class="form-label-group">
@@ -102,7 +100,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Bulding Name</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Bulding Address</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -111,8 +109,6 @@
         <h3 class="card-title text-center"><img class="login-key" src="../../img/key.png"></img>Edit Building</h3>
         <form id="create-building" class="form-signin">
           <div class="form-label-group">
-            <input type="text" id="editName" class="form-control" placeholder="Name" required autofocus />
-            <label for="editName">Name</label>
           </div>
 
           <div class="form-label-group">
@@ -147,7 +143,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Building Name</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Building Address</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -169,8 +165,6 @@
   const createBuildingForm = document.getElementById('create-building');
   createBuildingForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    const name = document.getElementById('inputName').value;
-    const currentBuildingId = "{{id}}";
     const address = document.getElementById('inputAddress').value;
     const city = document.getElementById('inputCity').value;
     const state = document.getElementById('inputState').value;
@@ -181,12 +175,10 @@
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name,
         address,
         city,
         state,
-        zip,
-        ApartmentId: currentBuildingId
+        zip
       })
     })
   })
