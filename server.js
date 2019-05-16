@@ -34,6 +34,9 @@ app.get("/admin/login", async (req, res) => {
   res.sendFile(path.join(__dirname, "/public/html/admin-login.html"));
 });
 
+app.use("/api/users", require("./routes/users"));
+app.use("/api/apartments", require("./routes/apartments"));
+
 app.get("/tenant/home", async (req, res) => {
   res.render("tenantHome");
 });
@@ -43,7 +46,8 @@ app.get("/tenant/services", async (req, res) => {
 });
 
 app.get("/admin/buildings", async (req, res) => {
-  res.render("adminBuildings");
+  const apartments = await db.Apartment.findAll({});
+  res.render("adminBuildings", apartments.dataValues);
 });
 
 app.get("/admin/buildings/:id", async (req, res) => {
@@ -59,13 +63,6 @@ app.get("/admin/buildings/:id", async (req, res) => {
   console.log("apartment", apartment);
   res.render("buildingTenants", apartment.dataValues);
 });
-
-app.use("/api/users", require("./routes/users"));
-app.use("/api/apartments", require("./routes/apartments"));
-
-// app.get("/admin/building", async (req, res) => {
-//   res.render("buildingTenants");
-// });
 
 app.get("/tenant/home", async (req, res) => {
   res.render("tenantHome");

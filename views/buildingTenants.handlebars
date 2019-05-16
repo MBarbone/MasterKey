@@ -106,7 +106,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form class="form-signin" method="POST" action="./email/email.php">
+          <form id="edit-user" class="form-signin">
             <div class="form-label-group">
               <input type="text" id="editName" class="form-control" placeholder="Name" required autofocus />
               <label for="editName">Name</label>
@@ -181,7 +181,31 @@
           email,
           unit,
           ApartmentId: currentBuildingId
-        })
-      })
-    })
+        });
+      });
+    });
+
+    const editUserForm = document.getElementById('create-user');
+    createUserForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const name = document.getElementById('inputName').value;
+      const currentBuildingId = "{{id}}";
+      const email = document.getElementById('inputEmail').value;
+      const unit = document.getElementById('inputUnit').value;
+      const rent = document.getElementById('inputRent').value;
+      fetch("/api/users", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          unit,
+          ApartmentId: currentBuildingId
+        });
+      });
+    });
+
+
   </script>
